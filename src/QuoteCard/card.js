@@ -1,36 +1,56 @@
-import React, { useState } from 'react'
-import "./card.scss"
-import data from '../data'
-
-
+import React, { useState } from "react";
+import "./card.scss";
+import data from "../data";
 
 const Card = () => {
-  const [Lyric, setLyric] = useState("Click to generate a quote");  
+  const [Lyric, setLyric] = useState("Click to generate a quote");
   // Ugly JS code Start//
   let i = 0;
   let quoteCounterOrdered = 29;
   let camper = new Audio(require("../assets/audio/ohcampercamper.mp3"));
   let changeContent = () => {
     //random img
-  let images = ["img1.png", "img2.png","img3.png","img4.png","img5.png","img6.png","img7.png","img8.png","img9.png","img10.png","img11.png","img12.png","img13.png"];
+    let images = [
+      "img1.png",
+      "img2.png",
+      "img3.png",
+      "img4.png",
+      "img5.png",
+      "img6.png",
+      "img7.png",
+      "img8.png",
+      "img9.png",
+      "img10.png",
+      "img11.png",
+      "img12.png",
+      "img13.png",
+    ];
     let counter = Math.floor(Math.random() * images.length);
-    document.getElementById("images").src = require(`../assets/img/${images[counter]}`);
-  //output 
+    document.getElementById(
+      "images"
+    ).src = require(`../assets/img/${images[counter]}`);
+    //output
     let controlButton = document.getElementById("mySelect");
     if (controlButton.value === "Commands") {
       let quoteCounter = Math.floor(Math.random() * 29);
-    document.getElementById("myQuote").textContent = (`"${data[quoteCounter].quote}"`);
-    data[quoteCounter].audio();
+      document.getElementById(
+        "myQuote"
+      ).textContent = `"${data[quoteCounter].quote}"`;
+      data[quoteCounter].audio();
     } else if (controlButton.value === "Killstreaks ordered") {
-      document.getElementById("myQuote").textContent = (`"${data[quoteCounterOrdered].quote}"`);
-    data[quoteCounterOrdered].audio();
-    quoteCounterOrdered++;
-    if (quoteCounterOrdered === (41)) {
-      quoteCounterOrdered = 29;
-    }
+      document.getElementById(
+        "myQuote"
+      ).textContent = `"${data[quoteCounterOrdered].quote}"`;
+      data[quoteCounterOrdered].audio();
+      quoteCounterOrdered++;
+      if (quoteCounterOrdered === 41) {
+        quoteCounterOrdered = 29;
+      }
     } else if (controlButton.value === "Killstreaks random") {
-      let quoteCounter = Math.floor(Math.random() * ((40) - 29) + 29);
-      document.getElementById("myQuote").textContent = (`"${data[quoteCounter].quote}"`);
+      let quoteCounter = Math.floor(Math.random() * (40 - 29) + 29);
+      document.getElementById(
+        "myQuote"
+      ).textContent = `"${data[quoteCounter].quote}"`;
       data[quoteCounter].audio();
     } else {
       let quoteCounter = 41;
@@ -81,17 +101,17 @@ const Card = () => {
       }, 63700);
       setTimeout(() => {
         setLyric(`"${data[55].quote}"`);
-      }, 70700);//
+      }, 70700); //
       setTimeout(() => {
         setLyric(`"${data[56].quote}"`);
       }, 74300);
-      
+
       setTimeout(() => {
         setLyric(`"${data[57].quote}"`);
       }, 81000);
       //bridge
       setTimeout(() => {
-        setLyric(`"${data[47].quote}"`); 
+        setLyric(`"${data[47].quote}"`);
       }, 85000);
       setTimeout(() => {
         setLyric(`"${data[48].quote}"`);
@@ -172,7 +192,7 @@ const Card = () => {
       setTimeout(() => {
         setLyric(`"Fin"`);
       }, 204000);
-      //end 
+      //end
       ////
       /* my best attempt at automating this:
       let index  = 42;
@@ -188,64 +208,80 @@ const Card = () => {
        }
        changeLyrics();
       */
-        const displayPics = () => {
-          if (controlButton.value === "ohcampercamper") {
-            document.getElementById("images").src = require(`../assets/img/${images[i]}`);
+      const displayPics = () => {
+        if (controlButton.value === "ohcampercamper") {
+          document.getElementById(
+            "images"
+          ).src = require(`../assets/img/${images[i]}`);
           i++;
-    if (i === images.length) {
-      i = 0;
-    }
-          } else if (controlButton.value !== "ohcampercamper") {
-            window.location.reload();
+          if (i === images.length) {
+            i = 0;
           }
+        } else if (controlButton.value !== "ohcampercamper") {
+          window.location.reload();
         }
-        var startTime = new Date().getTime();
-var interval = setInterval(function(){
-    if(new Date().getTime() - startTime > 205000){
-        clearInterval(interval);
-        return;
-    }
-    displayPics();
-}, 1250); 
+      };
+      var startTime = new Date().getTime();
+      var interval = setInterval(function () {
+        if (new Date().getTime() - startTime > 205000) {
+          clearInterval(interval);
+          return;
+        }
+        displayPics();
+      }, 1250);
       document.getElementById("myButton2").addEventListener("click", () => {
         clearInterval(interval);
-        document.getElementById("images").src = require(`../assets/img/${images[counter]}`);
+        document.getElementById(
+          "images"
+        ).src = require(`../assets/img/${images[counter]}`);
         data[41].pause(camper);
         setTimeout(() => {
           window.location.reload();
         }, 500);
-      })
+      });
     }
-  }
+  };
 
   // Ugly JS code End//
   return (
     <div>
-      <div className='flex-container'>
-      <div className='list'>
-      <form id='myform'>
-      <select id="mySelect">
-        <option value="Commands">Commands</option>
-        <option value="Killstreaks ordered">Killstreaks ordered</option>
-        <option value="Killstreaks random">Killstreaks random</option>
-        <option value="ohcampercamper">Oh Camper Camper</option>
-      </select>
-      </form>
-      <input type="button" as="input" id="myButton2" value="Reload"/>
+      <div className="flex-container">
+        <div className="list">
+          <form id="myform">
+            <select id="mySelect">
+              <option value="Commands">Commands</option>
+              <option value="Killstreaks ordered">Killstreaks ordered</option>
+              <option value="Killstreaks random">Killstreaks random</option>
+              <option value="ohcampercamper">Oh Camper Camper</option>
+            </select>
+          </form>
+          <input type="button" as="input" id="myButton2" value="Reload" />
+        </div>
       </div>
-      </div>
-      <div className='card'>
-        <img alt='random' src={require(`../assets/img/img6.png`)} id="images" height="270px" width="270px"></img>
-        <form id='form'>
-        <label id='myQuote'>{Lyric}</label> <br></br>
-        <input type="button" as="input" onClick={changeContent} id="myButton" value="Generate Quote"/>
+      <div className="card">
+        <img
+          alt="random"
+          src={require(`../assets/img/img6.png`)}
+          id="images"
+          height="270px"
+          width="270px"
+        ></img>
+        <form id="form">
+          <label id="myQuote">{Lyric}</label> <br></br>
+          <input
+            type="button"
+            as="input"
+            onClick={changeContent}
+            id="myButton"
+            value="Generate Quote"
+          />
         </form>
       </div>
-      <div className='myLabel'>
-      <h3>Created by Yassir Elkhaili</h3>
-      <h3 className='margin'>Source code on Github</h3>
+      <div className="myLabel">
+        <h3>Created by Yassir Elkhaili</h3>
+        <h3 className="margin">Source code on Github</h3>
       </div>
     </div>
-  )
-  }
-export default Card
+  );
+};
+export default Card;
