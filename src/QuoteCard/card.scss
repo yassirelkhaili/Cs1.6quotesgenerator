@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+.container {
+  max-width: 200px;
+  position: absolute;
+}
+
+
+
+html {
+  width: fit-content;
+}
+
+.card {
+  background-color: none;
+  margin-top: 80px;
+  margin-left: 120px;
+  width: 400px;
+  block-size: -webkit-fit-content;
+  block-size: -moz-fit-content;
+  block-size: fit-content;
+  border-radius: 10px;
+  padding: 20px;
+  height: 440px;
+  text-align: center;
+  box-shadow: rgb(255, 252, 46) 0px 5px 15px;
+}
+
+.myLabel {
+  width: 100%;
+  position: absolute;
+  left: 240px;
+  margin-top: 42px;
+  background-color: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.margin {
+  margin-top: 8px;
+}
+
+label {
+  display: block;
+  padding-top: 25px;
+  font-size: 22px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 252, 46);
+}
+
+input {
+  margin-top: 5px;
+  padding: 12px;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 6.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: rgb(57, 73, 102);
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  transition: 0.1s;
+  color: black;
+}
+
+input:hover {
+  background-color: rgb(42, 62, 104);
+}
+
+#mySelect {
+  padding: 12px;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 6.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: rgb(57, 73, 102);
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  transition: 0.1s;
+  color: black;
+  text-align: center;
+  position: absolute;
+  margin-left: 600px;
+  margin-top: 6px;
+  width: 200px;
+}
+
+#mySelect:hover {
+  background-color: rgb(42, 62, 104);
+}
+
+#myButton2 {
+  position: absolute;
+  margin-left: 830px;
+  min-width: 100px;
+}/*# sourceMappingURL=card.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-image: url(../assets/img/4f4cc7ebaaeb5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+
+@media all and (max-width: 950px) {
+  body {
+    overflow-x: hidden;
+  }
+  #mySelect {
+    top: 39pc;
+    left: -375px;
+    width: 190px;
+  }
+  #myButton2 {
+    top: 680px;
+    left: -595px;
+    min-width: 170px;
+  }
+}
+@media all and (max-width: 545px) {
+  body {
+    overflow: hidden;
+  }
+  #mySelect {
+    top: 38pc;
+    left: -440px;
+    width: 190px;
+  }
+  #myButton2 {
+    top: 42pc;
+    left: -660px;
+    min-width: 170px;
+  }
+  .card {
+    position: absolute;
+    left: -4pc;
+  }
+  .myLabel h3 {
+    top: 32pc;
+    left: -65px;
+    position: absolute;
+  }
+  .myLabel .margin {
+    top: 33pc;
+    left: -65px;
+  }
+}
+@media all and (max-width: 414px) {
+  body {
+    overflow: hidden;
+  }
+  #mySelect {
+    top: 41pc;
+    left: -485px;
+    width: 190px;
+  }
+  #myButton2 {
+    top: 718px;
+    left: -706px;
+    min-width: 170px;
+  }
+  .card {
+    position: absolute;
+    left: -7pc;
+  }
+  .myLabel h3 {
+    top: 37pc;
+    left: 122px;
+    position: absolute;
+  }
+  .myLabel .margin {
+    top: 38pc;
+    left: 127px;
+  }
+}
