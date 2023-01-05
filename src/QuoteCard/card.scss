@@ -10,12 +10,9 @@ html {
 
 ::-webkit-scrollbar {
   width: 9px;
+  background-color: transparent;
 }
 
-::-webkit-scrollbar-track {
-  background: none; 
-}
- 
 ::-webkit-scrollbar-thumb {
   background: #323F5F; 
   border-radius: 10px;
