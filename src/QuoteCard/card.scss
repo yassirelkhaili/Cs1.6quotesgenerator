@@ -158,8 +158,8 @@ body {
 
   #source {
     position: absolute;
-    top: 35pc;
-    left: -60px;
+    top: 34pc;
+    left: -65px;
   }
 }
 @media all and (max-width: 414px) {
@@ -184,5 +184,10 @@ body {
   .myLabel .margin {
     top: 34pc;
     left: -60px;
+  }
+  #source {
+    position: absolute;
+    top: 34pc;
+    left: -65px;
   }
 }
