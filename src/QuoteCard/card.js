@@ -280,7 +280,7 @@ const Card = () => {
       <div className="myLabel">
         <h3>Created by Yassir Elkhaili</h3>
         <h3 className="margin">Source code on Github</h3>
-        <h3 className="margin">Game: Counter Strike 1.6</h3>
+        <h3 className="margin" id="source">Game: Counter Strike 1.6</h3>
       </div>
     </div>
   );
