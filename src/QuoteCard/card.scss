@@ -110,7 +110,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 @media all and (max-width: 950px) {
