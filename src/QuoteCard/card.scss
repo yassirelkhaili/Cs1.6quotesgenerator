@@ -147,6 +147,7 @@ body {
 @media all and (max-width: 545px) {
   body {
     overflow-y: visible !important;
+    overflow-x: hidden !important;
   }
   #mySelect {
     top: 40pc;
@@ -181,6 +182,7 @@ body {
 @media all and (max-width: 414px) {
   body {
     overflow-y: visible !important;
+    overflow-x: hidden !important;
   }
   #mySelect {
     top: 41pc;
